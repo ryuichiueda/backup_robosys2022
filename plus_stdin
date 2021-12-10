@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 import sys
 
+def str_to_num(word):
+    try:
+        return int(word)
+    except:
+        return float(word)
+
 ans = 0
 for line in sys.stdin:
-    try:
-        ans += int(line)
-    except:
-        ans += float(line)
+    ans += str_to_num(line)
 
 print(ans)
